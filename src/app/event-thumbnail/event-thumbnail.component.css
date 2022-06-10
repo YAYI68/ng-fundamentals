@@ -1,0 +1,10 @@
+.thumbnail{
+    min-height: 210px;
+}
+.green{
+    color:greenyellow
+}
+.bold{
+    font-size: 2rem;
+    font-weight: 800;
+}

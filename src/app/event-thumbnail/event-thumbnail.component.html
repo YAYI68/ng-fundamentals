@@ -1,0 +1,42 @@
+<div [routerLink]="['/events',event?.id]" class="well hoverwell thumbnail">
+    <h2>{{event?.name | uppercase}}</h2>
+    <p>Date: {{event?.date | date:'shortDate'}}</p>
+    <!-- for ngClass application -->
+    <!-- <p [ngClass] = "turn2()" [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase=" '10:00 am' ">(Late start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </p> -->
+    <!-- Using ngStyle -->
+    <!-- <p [ngClass] = "turn2()" [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase=" '10:00 am' ">(Late start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </p> -->
+<!-- using Style.Color -->
+    <!-- <p [style.color] = " style1()" [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase=" '10:00 am' ">(Late start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </p> -->
+    <!-- using ngClass -->
+    <p [ngStyle] = " style2() " [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase=" '10:00 am' ">(Late start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </p>
+    <p>price: {{event?.price | currency:"USD"}}</p>
+    <p *ngIf="event?.location">
+        <span>Location: {{event?.location?.address}}</span>
+        <span>&nbsp;</span>
+        <span> {{ event?.location?.city}}, {{event?.location?.country}} </span>
+    </p>
+    <!-- <button class=" btn btn-primary" (click)="handleClick()">click me</button> -->
+    <div [hidden]="!event?.onlineUrl">
+        <p>hello</p>
+    </div>
+</div>
